@@ -19,11 +19,11 @@ class Controller {
     ): ResponseEntity<TestDto> {
         val faker = Faker(Locale.KOREA)
         val test = TestDto(
-            id = testDtoRequest.id,
-            address = faker.address().fullAddress(),
-            email = faker.internet().emailAddress(),
-            tel = faker.phoneNumber().phoneNumber(),
-            age = Random().nextInt(100)
+            name = testDtoRequest.name,
+            job = testDtoRequest.job,
+            hp = Random().nextFloat(100F),
+            speed = Random().nextFloat(200F),
+            atk = Random().nextFloat(500F),
         )
         tests.add(test)
         return ResponseEntity.ok().body(test)
