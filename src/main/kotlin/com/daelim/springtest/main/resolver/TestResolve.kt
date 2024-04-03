@@ -3,6 +3,7 @@ package com.daelim.springtest.main.resolver
 import com.daelim.springtest.main.api.model.dto.TestDto
 import graphql.kickstart.tools.GraphQLMutationResolver
 import graphql.kickstart.tools.GraphQLQueryResolver
+import kotlinx.coroutines.Job
 import net.datafaker.Faker
 import org.springframework.stereotype.Component
 import java.util.*
@@ -17,17 +18,21 @@ class PostResolver : GraphQLQueryResolver, GraphQLMutationResolver {
         return tests
     }
 
-    fun findTestById(id: String): TestDto? {
-        return tests.find { it.id == id }
+    fun findTestByName(name: String): TestDto? {
+        return tests.find { it.name == name }
+    }
+    fun findTestByJob(job: String): TestDto? {
+        return tests.find { it.job == job }
     }
 
-    fun createTest(userId: String): TestDto {
+
+    fun createTest(ChaName: String, ChaJob: String): TestDto {
         val test = TestDto(
-            id = userId,
-            address = faker.address().fullAddress(),
-            email = faker.internet().emailAddress(),
-            tel = faker.phoneNumber().phoneNumber(),
-            age = Random().nextInt(100)
+            name = ChaName,
+            hp = Random().nextInt(1000).toFloat(),
+            speed = Random().nextInt(10).toFloat(),
+            atk = Random().nextInt(200).toFloat(),
+            job = ChaJob,
         )
         tests.add(test)
         return test
