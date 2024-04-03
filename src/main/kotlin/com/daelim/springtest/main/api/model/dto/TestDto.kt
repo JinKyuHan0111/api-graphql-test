@@ -1,13 +1,14 @@
 package com.daelim.springtest.main.api.model.dto
 
 data class TestDto(
-    val id: String,
-    val address: String,
-    val email: String,
-    val tel: String? = null,
-    val age: Int,
+    val name : String,
+    val hp : Float,
+    val speed : Float,
+    val atk : Float,
+    val job : String
 )
-
+//
 data class TestDtoRequest(
-    val id: String,
+    val name : String,
+    val job : String
 )
