@@ -7,7 +7,7 @@ data class TestDto(
     val atk : Float,
     val job : String
 )
-//
+//sss
 data class TestDtoRequest(
     val name : String,
     val job : String
