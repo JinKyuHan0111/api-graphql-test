@@ -38,4 +38,5 @@ class MonsterController {
             ResponseEntity.ok().body(it)
         } ?: ResponseEntity.notFound().build()
     }
+    //
 }
