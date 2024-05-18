@@ -21,27 +21,30 @@ class UserSpec {
 
     @BeforeEach
     fun setup() {
+        //아이디 랜덤생성하는걸 못찾았음
+        val userid = faker.internet().password();
         val username = faker.internet().username()
         val password = faker.internet().password()
         randomUser = TestDto(
+            id = userid,
             name = username,
             hp = Random.nextFloat() * (10 - 1),
             atk = Random.nextFloat() * (10 - 1),
             job = "",
             speed = Random.nextFloat() * (10 - 1),
-
+            score = java.util.Random().nextFloat(500F),
         )
     }
 
     @Test
-    @DisplayName("유저 아이디가 영어만 사용되었는지 확인")
-    fun `유저 아이디가 영어만 사용되었는지 확인`() {
+    @DisplayName("유저 아이디가 영어와 숫자만 사용되었는지 확인")
+    fun `유저 아이디가 영어와 숫자만 사용되었는지 확인`() {
         // Given - setup()에서 이미 처리됨
-        val userid = randomUser.name
+        val userid = randomUser.id
 
         // Then
         for (c in userid) {
-            assertTrue(c in 'A'..'Z' || c in 'a'..'z', "유저 아이디는 영어만 사용해야 합니다.")
+            assertTrue(c in 'A'..'Z' || c in 'a'..'z' || c in '0'..'9',  userid)
         }
     }
 
