@@ -29,7 +29,7 @@ class UserServiceSpec {
             atk = Random.nextFloat() * (10 - 1),
             job = "",
             speed = Random.nextFloat() * (10 - 1),
-            score = Random.nextFloat() * 500F,
+            score = Random.nextInt(),
         )
         // 유저 생성
         postResolver.createTest("user123", randomUser.job)
