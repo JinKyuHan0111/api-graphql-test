@@ -48,4 +48,15 @@ class UserSpec {
         }
     }
 
-}
+    @Test
+    @DisplayName("유저아이디의 최대 글자수 안넘는지 파악하는 알고리즘Test")
+    fun `유저 아이디의 최대 글자수 안넘는지 파악`() {
+        val userid = randomUser.id
+
+        // When
+        val maxLength = 15 // 최대 글자 수 설정
+
+        // Then
+        assertTrue(userid.length <= maxLength, "User ID exceeds maximum length of $maxLength characters: $userid")
+        }
+    }
