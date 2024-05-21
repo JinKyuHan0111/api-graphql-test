@@ -3,18 +3,14 @@ package com.daelim.springtest.small
 import com.daelim.springtest.main.api.model.dto.TestDto
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.mockito.BDDMockito.given
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.mock.mockito.MockBean
 import net.datafaker.Faker
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.DisplayName
-import org.yaml.snakeyaml.internal.Logger
 import kotlin.random.Random
 
 @SpringBootTest
-class UserSpec {
+class UserSpec(s: String, s1: String, fl: Float) {
     private val faker = Faker()
 
     private lateinit var randomUser: TestDto
