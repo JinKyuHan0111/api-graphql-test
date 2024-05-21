@@ -32,7 +32,7 @@ class UserSpec {
             atk = Random.nextFloat() * (10 - 1),
             job = "",
             speed = Random.nextFloat() * (10 - 1),
-            score = java.util.Random().nextFloat(500F),
+            score = java.util.Random().nextInt(100, 10001),
         )
     }
 
@@ -44,7 +44,7 @@ class UserSpec {
 
         // Then
         for (c in userid) {
-            assertTrue(c in 'A'..'Z' || c in 'a'..'z' || c in '0'..'9',  userid)
+            assertTrue(c in 'A'..'Z' || c in 'a'..'z' || c in '0'..'9', userid)
         }
     }
 
@@ -58,5 +58,17 @@ class UserSpec {
 
         // Then
         assertTrue(userid.length <= maxLength, "User ID exceeds maximum length of $maxLength characters: $userid")
-        }
     }
+
+    @Test
+    @DisplayName("최저, 최고점 설정후 그사이만 점수 생성되는지 확인")
+    fun `최저, 최고점 설정후 그사이만 점수 생성되는지 확인`() {
+
+        val minScore = 100
+        val maxScore = 10000
+        val userscore = randomUser.score
+
+        //Then
+        assertTrue(userscore in minScore..maxScore, userscore.toString())
+    }
+}

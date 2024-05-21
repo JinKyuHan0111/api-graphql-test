@@ -7,7 +7,7 @@ data class TestDto(
     val speed : Float,
     val atk : Float,
     val job : String,
-    var score : Float,
+    var score : Int,
 )
 //sss
 data class TestDtoRequest(
