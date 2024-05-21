@@ -4,9 +4,9 @@ data class  MonsterDto (
     val Mname: String,
     val Mhp: Float,
     val Mspeed: Float,
-    val Matk: Float
+    val Matk: Float,
+    val Mint: Float
 )
 data class MonsterDtoRequest(
-    val name : String,
-    val job : String
+    val Mname : String,
 )

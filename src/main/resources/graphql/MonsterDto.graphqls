@@ -1,0 +1,15 @@
+type Monster {
+    Mname: String!
+    Mhp: Float!
+    Mspeed: Float!
+    Matk: Float!
+    Mint: Float!
+}
+type MQuery {
+    findAllMonsters: [Monster],
+    findMonsterByName(Mname: String!): Test
+}
+
+type MMutation {
+    createMonster(Mname: String): Monster
+}

@@ -18,11 +18,14 @@ class Controller {
         @RequestBody testDtoRequest: TestDtoRequest
     ): ResponseEntity<TestDto> {
         val test = TestDto(
+            id = testDtoRequest.name,
             name = testDtoRequest.name,
             job = testDtoRequest.job,
             hp = Random().nextFloat(100F),
             speed = Random().nextFloat(200F),
             atk = Random().nextFloat(500F),
+            score = Random().nextFloat(500F),
+
         )
         tests.add(test)
         return ResponseEntity.ok().body(test)
