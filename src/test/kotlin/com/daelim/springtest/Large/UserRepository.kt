@@ -32,7 +32,6 @@ class UserRankingManager(private val userRepository: UserRepository) {
 }
 
 fun main() {
-    // 테스트용 사용자 데이터 생성
     val users = listOf(
         User("user1", "User One", 1500.0f),
         User("user2", "User Two", 2000.0f),
