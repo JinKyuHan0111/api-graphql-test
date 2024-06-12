@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 4000
 
 # 애플리케이션을 시작합니다.
-CMD ["npm"]
+CMD ["npm", "start"]
